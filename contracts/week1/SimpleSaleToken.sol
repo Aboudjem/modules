@@ -43,7 +43,7 @@ contract SimpleSaleToken is ERC20, Ownable {
     function setConversionRate(uint _newRate) external onlyOwner {
         uint oldRate = _rate;
         _rate = _newRate;
-        emit ConversionRateUpdated(oldRate  , _rate);
+        emit ConversionRateUpdated(oldRate, _rate);
     }
 
     /**
