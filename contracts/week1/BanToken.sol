@@ -38,6 +38,11 @@ contract BanToken is ERC20, Ownable {
         emit AddressRestrictionUpdated(_addr, false);
     }
 
+    /**
+    @dev Returns whether the specified address is restricted or not.
+    @param _addr The address to check the restriction status of.
+    @return bool Returns true if the address is restricted, false otherwise.
+    */
     function isRestricted(address _addr) external view returns (bool) {
         return _restricted[_addr];
     }
