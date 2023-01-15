@@ -6,7 +6,6 @@ import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
 /// @title GodModeToken
 contract GodModeToken is ERC20, Ownable {
-
     constructor(
         string memory name_,
         string memory symbol_
