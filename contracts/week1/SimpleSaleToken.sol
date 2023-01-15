@@ -11,6 +11,7 @@ contract SimpleSaleToken is ERC20, Ownable {
     uint private _rate;
 
     event AddressRestrictionUpdated(address indexed _addr, bool _restricted);
+    event ConversionRateUpdated(uint oldRate, uint newRate);
 
     constructor(
         string memory name_,
@@ -40,7 +41,9 @@ contract SimpleSaleToken is ERC20, Ownable {
      * @param _newRate The new conversion rate
      */
     function setConversionRate(uint _newRate) external onlyOwner {
+        uint oldRate = _rate;
         _rate = _newRate;
+        emit ConversionRateUpdated(oldRate  , _rate);
     }
 
     /**
