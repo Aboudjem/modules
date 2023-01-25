@@ -5,9 +5,9 @@ import { Contract, Signer, utils } from "ethers";
 describe("BondingCurveToken", function () {
   let bondingCurveToken: Contract;
   let user1: Signer;
-  const slope: number = 1000;
+  const slope = 1000;
 
-  let userAddress1: String;
+  let userAddress1: string;
 
   function sum(n: number): number {
     return (n / 2) * (1 + n);

@@ -8,8 +8,8 @@ describe("BanToken", function () {
   let user2: Signer;
   let admin: Signer;
 
-  let userAddress1: String;
-  let userAddress2: String;
+  let userAddress1: string;
+  let userAddress2: string;
 
   before(async function () {
     const BanToken = await ethers.getContractFactory("BanToken");
