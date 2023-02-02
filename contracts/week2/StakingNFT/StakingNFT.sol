@@ -60,13 +60,13 @@ contract StakingNFT {
         return this.onERC721Received.selector;
     }
 
-
     function deposit(uint tokenId) external {
         address owner = nft.ownerOf(tokenId);
         nft.safeTransferFrom(owner, address(this), tokenId);
         _deposits[tokenId].owner = owner;
         _deposits[tokenId].lastClaim = block.timestamp;
     }
+
     /**
      * @dev Allows the owner of a NFT to withdraw the NFT and claim the pending rewards earned for staking the NFT.
      * @param tokenId The ID of the token for which the rewards are being claimed.
