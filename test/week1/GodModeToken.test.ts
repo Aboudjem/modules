@@ -9,10 +9,10 @@ describe("GodModeToken", function () {
   let user3: Signer;
   let admin: Signer;
 
-  let userAddress1: String;
-  let userAddress2: String;
-  let userAddress3: String;
-  let adminAddress: String;
+  let userAddress1: string;
+  let userAddress2: string;
+  let userAddress3: string;
+  let adminAddress: string;
 
   before(async function () {
     const GodModeToken = await ethers.getContractFactory("GodModeToken");
