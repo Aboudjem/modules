@@ -1,21 +1,14 @@
 import { expect } from "chai";
 import { ethers } from "hardhat";
-import { Contract, Signer, utils } from "ethers";
+import { Contract, Signer } from "ethers";
 
 describe("NFT", function () {
   let nft: Contract;
   let game: Contract;
-  let num: number;
   let accounts: Signer[];
-
-  let userAddress1: string;
-  let userAddress2: string;
-  let minterRoleHash: string;
 
   before(async function () {
     accounts = await ethers.getSigners();
-    userAddress1 = await accounts[0].getAddress();
-    userAddress2 = await accounts[1].getAddress();
 
     const NFT = await ethers.getContractFactory("Enumerable");
     nft = await NFT.deploy("NftEnum", "ENUM");
@@ -118,5 +111,4 @@ describe("NFT", function () {
       .getPrimeCount(await accounts[9].getAddress());
     expect(res).to.equal(0);
   });
-
 });

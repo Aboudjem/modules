@@ -72,13 +72,11 @@ describe("NFT", function () {
   });
 
   it("Should approve an NFT to the StakingNFT contract", async () => {
-    await nft
-      .connect(user1).approve(staking.address, "0");
+    await nft.connect(user1).approve(staking.address, "0");
   });
 
   it("Should deposit an NFT to the StakingNFT contract", async () => {
-    await staking
-      .connect(user1).deposit("0");
+    await staking.connect(user1).deposit("0");
   });
 
   it("Should calculate rewards for user2 after increasing time by 1hour ", async () => {
